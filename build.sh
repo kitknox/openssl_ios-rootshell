@@ -6,7 +6,7 @@ set -euo pipefail
 # Produces libssl.xcframework and libcrypto.xcframework
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OPENSSL_SOURCE="${SCRIPT_DIR}/../openssl"
+OPENSSL_SOURCE="${OPENSSL_SOURCE_DIR:-${SCRIPT_DIR}/../openssl}"
 BUILD_DIR="${SCRIPT_DIR}/.build"
 NCPU=$(sysctl -n hw.ncpu)
 
